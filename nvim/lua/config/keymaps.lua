@@ -17,3 +17,17 @@ vim.keymap.set("i", "<C-h>", "<Left>", { noremap = true, silent = true }) -- Key
 vim.keymap.set("i", "<C-l>", "<Right>", { noremap = true, silent = true }) -- Keymap on Keyboard: Ctrl + l
 vim.keymap.set("i", "<C-j>", "<Down>", { noremap = true, silent = true }) -- Keymap on Keyboard: Ctrl + j
 vim.keymap.set("i", "<C-k>", "<Up>", { noremap = true, silent = true }) -- Keymap on Keyboard: Ctrl + k
+
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope.builtin").find_files({
+    hidden = true,
+    no_ignore = false,
+  })
+end, { desc = "Find files (+dotfiles, +ignored)" })
+
+vim.keymap.set("n", "<leader><space>", function()
+  require("telescope.builtin").find_files({
+    hidden = true,
+    no_ignore = false,
+  })
+end, { desc = "Find files (include dotfiles & ignored)" })
